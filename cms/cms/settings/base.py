@@ -45,6 +45,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "wagtail.api.v2",
+    "corsheaders",
+    "rest_framework",
+    "blog"
 ]
 
 MIDDLEWARE = [
@@ -56,9 +60,13 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = "cms.urls"
+CORS_ORIGIN_ALLOW_ALL = True # for development mode only
+ALLOWED_HOSTS = ["*"]
 
 TEMPLATES = [
     {
