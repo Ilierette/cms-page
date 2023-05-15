@@ -11,7 +11,7 @@ function App() {
   },[])
 
   const getData = async() => {
-    const response = await fetch('http://localhost:8000/api/v2/pages')
+    const response = await fetch(`${import.meta.env.VITE_URL}/api/v2/pages`)
     const jsonData = await response.json();
     console.log(jsonData.items)
   }
